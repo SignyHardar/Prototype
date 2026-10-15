@@ -645,8 +645,8 @@ function ReportScreen({
   animate?: boolean
 }) {
   const [stage, setStage] = useState(animate ? 0 : 6)
-  const title = useTypedText(issue.title, animate && stage >= 0, 36)
-  const found = useTypedText(issue.whatWasFound, animate && stage >= 1, 10)
+  const title = useTypedText(issue.title, Boolean(animate && stage >= 0), 36)
+  const found = useTypedText(issue.whatWasFound, Boolean(animate && stage >= 1), 10)
 
   useEffect(() => {
     if (!animate) return
